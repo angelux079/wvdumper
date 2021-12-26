@@ -1,25 +1,17 @@
-# Dumper
+# Widevine Dumper
 
-Dumper is a Frida script to dump L3 CDMs from any Android device.
-
-## Dependencies
-
-Use pip to install the dependencies:
-
-`pip3 install -r requirements.txt`
+Frida script to dump L3 CDM
 
 ## Usage
 
+* Run `pip install -r requirements.txt` or `pip3` to install the dependencies
 * Enable USB debugging
-* Start frida-server on the device
-* Execute dump_keys.py
-* Start streaming some DRM-protected content
+* Start Frida server on the device
+* Run `dump_keys.py`
+* Play DRM protected content
 
-## Temporary disabling L1 to use L3 instead
-A few phone brands let us use the L1 keybox even after unlocking the bootloader (like Xiaomi). In this case, installation of a Magisk module called [liboemcrypto-disabler](https://github.com/umylive/liboemcrypto-disabler) is necessary.
+## Notes
 
-## Known issues
-It seems like Google made some changes in their OEMCrypto library and it broke the script. Further investigation is needed to make it work on Android 11+, feel free to open PRs.
-
-## Credits
-Thanks to the original author of the code.
+* Google made changes in OEMCrypto library and broke the script. Further investigation is needed to make it work on Android 11+
+* To temporarily disable L1 to use L3 use a Magisk module called [liboemcrypto-disabler](https://github.com/umylive/liboemcrypto-disabler)
+* Fork of [wvdumper/dumper](https://github.com/wvdumper/dumper)
